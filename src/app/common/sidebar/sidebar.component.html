@@ -1,0 +1,51 @@
+<aside class="sidebar" [class.active]="isSidebarVisible">
+  <div class="sidebar-header">
+    <img src="https://i.imgur.com/UVkDEDP.png" alt="Logo" class="logo" />
+    <button class="close-btn" (click)="toggleSidebar()">×</button>
+  </div>
+
+  <ul class="sidebar-menu">
+    <p>PAGES</p>
+
+    <!-- Trade Menu with Submenus -->
+    <li (click)="toggleSubmenu('trade')" [class.open]="openMenus['trade']">
+      <i class="fas fa-folder"></i> Trade
+      <i class="fas" [class.fa-chevron-down]="!openMenus['trade']" [class.fa-chevron-up]="openMenus['trade']"></i>
+    </li>
+    <ul *ngIf="openMenus['trade']" class="sub-menu">
+      <li>Trade</li>
+      <li>Trade History</li>
+      <li>Trade Details</li>
+      <li>Trade Summary</li>
+    </ul>
+
+    <li>
+      <i class="fas fa-file"></i> Billing <i class="fas fa-chevron-down"></i>
+    </li>
+    <li>
+      <i class="fas fa-book"></i> Documentation <i class="fas fa-chevron-down"></i>
+    </li>
+
+    <p>TOOLS & COMPONENTS</p>
+
+    <li (click)="toggleSubmenu('uiElements')" [class.open]="openMenus['uiElements']">
+      <i class="fas fa-puzzle-piece"></i> UI Elements
+      <i class="fas" [class.fa-chevron-down]="!openMenus['uiElements']" [class.fa-chevron-up]="openMenus['uiElements']"></i>
+    </li>
+    <ul *ngIf="openMenus['uiElements']" class="sub-menu">
+      <li>Buttons</li>
+      <li>Cards</li>
+      <li>Modals</li>
+    </ul>
+
+    <li>
+      <i class="fas fa-heart"></i> Icons <i class="fas fa-chevron-down"></i>
+    </li>
+    <li>
+      <i class="fas fa-table"></i> Forms <i class="fas fa-chevron-down"></i>
+    </li>
+    <li>
+      <i class="fas fa-th"></i> Tables <i class="fas fa-chevron-down"></i>
+    </li>
+  </ul>
+</aside>

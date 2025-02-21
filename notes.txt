@@ -1,0 +1,8 @@
+1. We we have created component we have to import in compoenet constructer
+eg: imports: [RouterOutlet, NavigationComponent]
+
+2. If want to use directive then use in
+imports: [NgIf,NgFor,NgClass]
+
+3. If want to use Form Module
+imports: [FormsModules],

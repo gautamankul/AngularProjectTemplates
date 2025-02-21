@@ -1,0 +1,40 @@
+<header class="header">
+  <nav class="navbar">
+    <!-- Hamburger Menu Icon -->
+    <ul class="nav-links">
+      <li class="icon menu-icon" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">App</a></li>
+    </ul>
+
+    <!-- Action Icons -->
+    <ul class="nav-actions">
+      <li class="icon">
+        <i class="fas fa-comment-alt"></i>
+        <span class="badge">3</span>
+      </li>
+      <li class="icon"><i class="fas fa-bell"></i></li>
+      <li class="icon"><i class="fas fa-search"></i></li>
+
+      <!-- Profile Picture -->
+      <li class="icon" (click)="toggleMenu()">
+        <img src="https://www.htmlelements.com/demos/images/phonebook/mark.png" alt="Profile" class="profile-img" />
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Popup Menu -->
+  <div class="popup-menu" *ngIf="isMenuVisible" (clickOutside)="closeMenu()">
+    <ul>
+      <li><i class="fas fa-user-circle"></i> Profile</li>
+      <li><i class="fas fa-chart-pie"></i> Analytics</li>
+      <li><i class="fas fa-cog"></i> Settings & Privacy</li>
+      <li><i class="fas fa-question-circle"></i> Help</li>
+      <li><i class="fas fa-sign-out-alt"></i> Sign Out</li>
+    </ul>
+  </div>
+</header>

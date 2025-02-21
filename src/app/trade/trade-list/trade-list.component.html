@@ -1,0 +1,61 @@
+<div class="table-container">
+  <table class="main-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Details</th>
+        <th>So No</th>
+        <th>Po No</th>
+        <th>Po Date</th>
+        <th>Bill To</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let order of orders; let i = index">
+        <!-- Main Row -->
+        <tr>
+          <td>{{ order.name }}</td>
+          <td>{{ order.description }}</td>
+          <td>{{ order.so_no }}</td>
+          <td>{{ order.po_no }}</td>
+          <td>{{ order.po_date }}</td>
+          <td>{{ order.bill_to }}</td>
+          <td>
+            <button class="expand-button" (click)="toggleRow(i)">
+              {{ expandedRows[i] ? "▼" : "▶" }}
+            </button>
+          </td>
+        </tr>
+
+        <!-- Sub-Table Row -->
+        <tr *ngIf="expandedRows[i]">
+          <td [attr.colspan]="7">
+            <table class="sub-table">
+              <thead>
+                <tr>
+                  <th>Project Definition</th>
+                  <th>Material Description</th>
+                  <th>Vendor Material Code</th>
+                  <th>Quantity</th>
+                  <th>Balance ZDL QTY</th>
+                  <th>License SL No</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of order.inline_items">
+                  <td>{{ item.project_definition }}</td>
+                  <td>{{ item.material_description }}</td>
+                  <td>{{ item.material_no }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ item.balance_zdl_qty }}</td>
+                  <td>{{ item.license_sl_no }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

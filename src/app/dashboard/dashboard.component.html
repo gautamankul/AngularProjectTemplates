@@ -1,0 +1,79 @@
+<div class="dashboard">
+  <h1 class="dashboard-title">Total Ideas</h1>
+
+  <div class="dashboard-grid">
+    <!-- Left side with donut chart -->
+    <div class="chart-container">
+      <!-- <img src="https://i.imgur.com/rWNIDMw.png" alt="bashboard" srcset="" width="50%"> -->
+      <!-- <app-donut-chart
+          [total]="243"
+          [subtitle]="'for 24 pages'"
+          [data]="ideaCategories">
+        </app-donut-chart> -->
+    </div>
+
+    <!-- Right side with categories -->
+    <div class="categories-grid">
+      <div *ngFor="let category of ideaCategories" class="category-item">
+        <div class="category-icon" [style.background-color]="category.color">
+          {{category.code}}
+        </div>
+        <div class="category-info">
+          <div class="category-name">{{category.name}}</div>
+          <div class="category-count">{{category.count}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Growth section -->
+  <div class="growth-section">
+    <div class="growth-subtitle">Our ideas may help you increase your organic traffic</div>
+    <div class="growth-title">Over 1000%</div>
+    <div class="growth-bars">
+      <div class="growth-bar">
+        <div class="bar-label">Current</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 33%"></div>
+        </div>
+      </div>
+      <div class="growth-bar">
+        <div class="bar-label">Potential</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pages table -->
+  <div class="table-container">
+    <table class="pages-table">
+      <thead>
+        <tr>
+          <th>Priority</th>
+          <th>Page</th>
+          <th>Total Volume</th>
+          <th>Ideas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let page of pages">
+          <td>
+            <div class="priority-bars">
+              <div *ngFor="let i of [1,2,3]" [class.active]="i <= page.priority" class="priority-bar">
+              </div>
+            </div>
+          </td>
+          <td class="page-url">{{page.url}}</td>
+          <td>{{page.volume}}</td>
+          <td>
+            <span class="ideas-badge">
+              {{page.ideas}} ideas
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

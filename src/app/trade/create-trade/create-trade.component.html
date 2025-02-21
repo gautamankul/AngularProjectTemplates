@@ -1,0 +1,69 @@
+<div class="container">
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <!-- Files Upload Section -->
+    <div class="section">
+      <h2 class="section-title">Files Uploads</h2>
+      <div class="sub-section">
+        <div class="file-input-row">
+          <div class="file-input-group">
+            <label>File type</label>
+            <select formControlName="fileType" class="form-control">
+              <option value="" disabled>Select type</option>
+              <option value="xslx">Xslx</option>
+              <option value="xsl">Xsl</option>
+              <option value="csv">CSV</option>
+            </select>
+          </div>
+          <div class="file-input-group">
+            <label>Choose File</label>
+            <div class="file-input-wrapper">
+              <input type="file" formControlName="file" class="form-control" accept=".xlsx, .xls, .csv" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional DA Access Section -->
+    <div class="section">
+      <h2 class="section-title">Additional DA Access(optional)</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <select formControlName="daAccess" class="form-control">
+            <option value="" disabled>Select employee name to give DA Access</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select formControlName="projectEngineer" class="form-control">
+            <option value="" disabled>Select employee name</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approvers List Section -->
+    <div class="section">
+      <h2 class="section-title">Approvers List</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" formControlName="approver1" class="form-control" placeholder="Enter approver name" />
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="approver2" class="form-control" placeholder="Enter approver name" />
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="approver3" class="form-control" placeholder="Enter approver name" />
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="approver4" class="form-control" placeholder="Enter approver name" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="button-group">
+      <button type="submit" class="btn btn-submit">Submit</button>
+      <button type="button" class="btn btn-close" (click)="onClose()">Close</button>
+    </div>
+  </form>
+</div>

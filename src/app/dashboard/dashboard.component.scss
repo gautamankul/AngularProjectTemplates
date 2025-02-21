@@ -1,0 +1,162 @@
+.dashboard {
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.chart-container {
+  position: relative;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+}
+
+.category-info {
+  flex: 1;
+}
+
+.category-name {
+  font-size: 14px;
+  color: #666;
+}
+
+.category-count {
+  font-weight: bold;
+}
+
+.growth-section {
+  margin-top: 32px;
+}
+
+.growth-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.growth-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.growth-bars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.growth-bar {
+  flex: 1;
+}
+
+.bar-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #2196F3;
+  border-radius: 4px;
+}
+
+.table-container {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.pages-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pages-table th {
+  text-align: left;
+  padding: 12px 8px;
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
+.pages-table td {
+  padding: 12px 8px;
+  border-top: 1px solid #eee;
+}
+
+.priority-bars {
+  display: flex;
+  gap: 4px;
+}
+
+.priority-bar {
+  width: 32px;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.priority-bar.active {
+  background: #2196F3;
+}
+
+.page-url {
+  font-size: 14px;
+  color: #333;
+}
+
+.ideas-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 14px;
+}
